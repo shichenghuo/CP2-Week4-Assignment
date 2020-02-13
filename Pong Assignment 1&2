@@ -89,7 +89,7 @@ function draw() {
       vx = -vx;
       
     } else{
-     leftscore ++;
+     rightscore ++;
      vx = -vx;// game over
     }
   }
@@ -97,15 +97,22 @@ function draw() {
     if (y < rightPaddle+25 && y > rightPaddle-25) {
       vx = -vx;
     } else {
-    rightscore ++; 
+    leftscore ++; 
     vx = -vx;// game over
     }
   }
+  
+  if (leftscore == 10) {
+  text ('you lose!',width-2*width/10, 60);
+  noLoop();
+  }
+  
+  if (rightscore == 10) {
+  text ('you lose!', width/10,60);
+  noLoop();
+  }
 
 
-//Two players nose define
-
-// Togehter
   for(var i = 0 ; i < poses.length; i++){
 
     if (poses.length < 2) {
